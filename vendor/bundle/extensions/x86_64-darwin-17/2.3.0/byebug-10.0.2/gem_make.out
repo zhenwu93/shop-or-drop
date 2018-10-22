@@ -1,0 +1,19 @@
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+/Users/Wendy/.rvm/rubies/ruby-2.3.3/bin/ruby -r ./siteconf20181022-15434-1xiiw5h.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR="
+compiling locker.c
+compiling byebug.c
+compiling context.c
+compiling breakpoint.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20181022-15434-1aw5g80/byebug

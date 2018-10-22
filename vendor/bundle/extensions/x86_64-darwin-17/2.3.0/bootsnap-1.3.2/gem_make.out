@@ -1,0 +1,15 @@
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+/Users/Wendy/.rvm/rubies/ruby-2.3.3/bin/ruby -r ./siteconf20181022-15434-ohw3nl.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20181022-15434-qirlxv/bootsnap

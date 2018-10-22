@@ -1,0 +1,25 @@
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/puma-3.12.0/ext/puma_http11
+/Users/Wendy/.rvm/rubies/ruby-2.3.3/bin/ruby -r ./siteconf20181022-15434-11wabve.rb extconf.rb
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+creating Makefile
+
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/puma-3.12.0/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/puma-3.12.0/ext/puma_http11
+make "DESTDIR="
+compiling io_buffer.c
+compiling mini_ssl.c
+compiling puma_http11.c
+compiling http11_parser.c
+ext/puma_http11/http11_parser.c:44:18: warning: unused variable 'puma_parser_en_main' [-Wunused-const-variable]
+static const int puma_parser_en_main = 1;
+                 ^
+1 warning generated.
+linking shared-object puma/puma_http11.bundle
+
+current directory: /Users/Wendy/Development/code/shop_or_drop/vendor/bundle/gems/puma-3.12.0/ext/puma_http11
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 puma_http11.bundle ./.gem.20181022-15434-wfuf0s/puma

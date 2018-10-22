@@ -1,0 +1,11 @@
+<h1>Product</h1>
+
+  <p>Seller: <%= @product.seller_name %><br>
+  <p> Product Name : <%= @product.name %></p>
+  <p>Description: <%= @product.description %> </p>
+  <p> Price: <%= @product.price %> </p>
+  <p>Quantity: <%= @product.quantity %></p>
+
+
+  <%= link_to 'Edit', edit_product_path %>
+  <%= link_to 'Delete', product_path(@product), method: :delete %>

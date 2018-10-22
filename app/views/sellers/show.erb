@@ -1,0 +1,9 @@
+<h1>USER</h1>
+
+<p> First Name: <%= @seller.first_name %></p>
+  <p>Last Name: <%= @seller.last_name %> </p>
+  <p> Username: <%= @seller.username %> </p>
+  <p>Email: <%= @seller.email %></p>
+
+  <%= link_to 'Edit', edit_seller_path %>
+  <%= link_to 'Delete', seller_path(@seller), method: :delete %>

@@ -1,0 +1,14 @@
+<% if flash[:error] %>
+  <% flash[:error].each do |error| %>
+    <%= error %><br>
+  <% end %>
+<% end %>
+
+
+<%= form_for @club do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :owner_id %><br>
+  <%= f.number_field :owner_id %><br>
+  <%= f.submit %>
+  <% end %>

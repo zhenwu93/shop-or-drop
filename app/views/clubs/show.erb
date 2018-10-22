@@ -1,0 +1,7 @@
+<h1>Club</h1>
+
+<p> Club Name: <%= @club.name %></p>
+  <p>Owner Name: <%= @club.owner_name %> </p>
+
+  <%= link_to 'Edit', edit_club_path %>
+  <%= link_to 'Delete', club_path(@club), method: :delete %>
