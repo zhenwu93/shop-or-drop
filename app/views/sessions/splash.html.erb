@@ -1,0 +1,5 @@
+<h1>Welcome to Shop or Drop</h1> <br>
+<p> Do you want to log in buyer or seller?</p> <br>
+
+<%= button_to  "Buyer", "/login", {method: :patch, params: {user_type: "Buyer"}} %>
+<%= button_to  "Seller", "/login", {method: :patch, params: {user_type: "Seller"}} %>

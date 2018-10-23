@@ -1,8 +1,9 @@
 class SellersController < ApplicationController
-    before_action :find_seller, only: [:show, :edit, :update, :destroy]
+  before_action :find_seller, only: [:show, :edit, :update, :destroy]
 
   def index
     @sellers = Seller.all
+    byebug
   end
 
   def show

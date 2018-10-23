@@ -19,7 +19,6 @@ class ClubsController < ApplicationController
   private
 
   def new_club_params
-
     params.require(:club).permit(:name, :owner_id)
   end
 

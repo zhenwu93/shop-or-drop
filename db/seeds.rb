@@ -29,3 +29,18 @@ end
 10.times do
   Product.create(name: Faker::Beer.name, description: Faker::Beer.style , price: rand(1..100), quantity: rand(1..20),  seller_id: rand(1..10))
 end
+
+10.times do
+  owner = Seller.all.sample
+  club = Club.create(name: Faker::Name.name, owner_id: owner.id)
+  3.times do
+    member = Seller.all.sample
+    ClubSeller.create(club_id: club.id, seller_id: member.id)
+  end
+end
+
+Product.all.each do |product|
+  seller = Seller.all.sample
+  club = seller.clubs.sample
+  Listing.create(club_id: club.id, seller_id: seller.id, product_id: product.id)
+end

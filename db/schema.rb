@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_210601) do
+ActiveRecord::Schema.define(version: 2018_10_23_210728) do
 
   create_table "buyers", force: :cascade do |t|
     t.string "first_name"
@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 2018_10_22_210601) do
     t.string "address"
     t.integer "phone_number"
     t.string "username"
-    t.string "password"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "club_sellers", force: :cascade do |t|
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 2018_10_22_210601) do
   create_table "clubs", force: :cascade do |t|
     t.string "name"
     t.integer "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.integer "club_id"
+    t.integer "product_id"
+    t.integer "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,9 +58,24 @@ ActiveRecord::Schema.define(version: 2018_10_22_210601) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
-    t.string "password"
     t.string "email"
     t.string "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+  end
+
+  create_table "swipes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "listing_id"
+    t.string "outcome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wishlists", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "listing_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
