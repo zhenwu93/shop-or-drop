@@ -4,6 +4,6 @@
   <%= wish_hash[:item] %><br>
   <%= wish_hash[:description]%><br>
   <%= wish_hash[:price]%><br><br>
-  <%= button_to 'Add to Cart', add_listing_to_cart { method: :patch, params: {wish_id: wish_hash[:wish_id]}} %>
+  <%= button_to 'Add to Cart', add_listing_to_cart_path, { method: :patch, params: {wish_id: wish_hash[:wish_id], from: "wishlist"}} %>
   <%= button_to 'Delete Item', wishlist_path(wish_hash[:wish_id]), {method: :delete, params: {wish_id: wish_hash[:wish_id]}} %>
   <% end %>

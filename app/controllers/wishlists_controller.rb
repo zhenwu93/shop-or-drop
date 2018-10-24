@@ -26,7 +26,6 @@ class WishlistsController < ApplicationController
   end
 
   def find_wish_list
-    byebug
     @wishlist = Wishlist.find(params[:wish_id])
   end
 

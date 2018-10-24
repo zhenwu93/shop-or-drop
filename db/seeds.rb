@@ -26,7 +26,7 @@ end
 email: Faker::Internet.email, rating: rand(1..5))
 end
 
-10.times do
+30.times do
   Product.create(name: Faker::Beer.name, description: Faker::Beer.style , price: rand(1..100), quantity: rand(1..20),  seller_id: rand(1..10))
 end
 

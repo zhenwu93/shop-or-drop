@@ -27,19 +27,18 @@ class Swipe < ApplicationRecord
 
   def debrief_swipe
 
-    byebug
     case self.outcome
 
     when "like"
     #TODO ADD TO wishlist
       Wishlist.create(buyer_id: self.buyer_id, listing_id: self.listing_id)
-      byebug
     when "dislike"
     #TODO ADD TO no-wishlist
     nil
     when "superlike"
     #TODO ADD to cart
-      # Cart.update(buyer_id: self.buyer_id, listing_id: self.listing_id))
+      # add_listing_to_cart(self.listing_id)
+      "add_to_cart"
     end
 
   end

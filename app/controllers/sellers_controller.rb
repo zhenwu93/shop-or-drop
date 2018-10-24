@@ -44,7 +44,6 @@ class SellersController < ApplicationController
   private
 
   def new_seller_params
-
     params.require(:seller).permit(:first_name, :last_name, :password, :email, :username)
   end
 
