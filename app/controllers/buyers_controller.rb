@@ -6,7 +6,6 @@ class BuyersController < ApplicationController
   end
 
   def show
-    byebug
   end
 
   def new
@@ -16,8 +15,8 @@ class BuyersController < ApplicationController
   def create
     @buyer = Buyer.create(new_buyer_params)
     if @buyer.valid?
-
-      redirect_to buyer_path(@buyer)
+      flash[:notice] = "Your account has been successfully created!"
+      redirect_to '/login'
     else
       flash[:error] = @buyer.errors.full_messages
       redirect_to new_buyer_path

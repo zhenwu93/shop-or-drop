@@ -3,10 +3,19 @@ class Listing < ApplicationRecord
   belongs_to :seller
   belongs_to :product
   has_many :swipes
+  has_many :wishlists
 
 
   def product_name
     product.name
+  end
+
+  def product_description
+      product.description
+  end
+
+  def product_price
+      product.price
   end
 
   def seller_id

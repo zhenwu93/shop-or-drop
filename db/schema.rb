@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_210728) do
+ActiveRecord::Schema.define(version: 2018_10_24_132104) do
 
   create_table "buyers", force: :cascade do |t|
     t.string "first_name"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_210728) do
   end
 
   create_table "swipes", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "buyer_id"
     t.integer "listing_id"
     t.string "outcome"
     t.datetime "created_at", null: false
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_210728) do
   end
 
   create_table "wishlists", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "buyer_id"
     t.integer "listing_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

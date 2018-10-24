@@ -1,0 +1,10 @@
+<h1>HELLO</h1>
+
+
+<p>Name:  <%=@product.name%> </p>
+<p>Description:  <%= @product.description %></p>
+<p>Price:  <%= @product.price %> </p>
+
+<%= button_to  "This ain't it cheif", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'dislike' }}%>
+<%= button_to  "Litttttt", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'like' }}%>
+<%= button_to  "Take my money!!", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'superlike' }}%>

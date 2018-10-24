@@ -1,4 +1,8 @@
-<h1>USER</h1>
+<h1>BUYER</h1>
+
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+    <% end %>
 
 <p> First Name: <%= @buyer.first_name %></p>
   <p>Last Name: <%= @buyer.last_name %> </p>
@@ -7,3 +11,4 @@
 
   <%= link_to 'Edit', edit_buyer_path %>
   <%= link_to 'Delete', buyer_path(@buyer), method: :delete %>
+  <%= link_to 'Swipes', swipes_path %>
