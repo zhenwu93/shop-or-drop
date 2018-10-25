@@ -1,3 +1,10 @@
+<style>
+  body { margin: auto;
+    width: 50%;
+    border: 3px solid red;
+    padding: 10px;}
+</style>
+<body>
 <h1>BUYER</h1>
 
   <% if flash[:notice] %>
@@ -17,7 +24,7 @@
 
     <ol>
     <% @listings.each do |listing| %>
-      <li><%= listing.product_name %> : $<%= Listing.float_to_money(listing.product_price) %></li>
+      <li><%= listing.product_name %> : $<%= Listing.float_to_money(listing.product_price) %></li> <br>
     <% end %>
     </ol>
     <hr>
@@ -30,3 +37,4 @@
   <%= button_to "Delete Account", @buyer, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
   <%= button_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure you want to log out?" } %>
   <% end %>
+</body>

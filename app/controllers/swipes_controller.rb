@@ -20,7 +20,7 @@ class SwipesController < ApplicationController
     @swipe = Swipe.create(buyer_id: params[:swipe_buyer_id],listing_id: params[:swipe_listing_id], outcome: params[:outcome])
     # add item to wishlist/nolist or cart... swipe model?
     output = @swipe.debrief_swipe
-
+    session[:last_swipe] = params[:outcome]
     if output == "add_to_cart"
       params[:from] = "swipes"
       add_listing_to_cart(@swipe.listing_id)
