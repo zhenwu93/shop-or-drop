@@ -1,18 +1,23 @@
 <% provide(:title, "Log in") %>
 
 <body>
-<h1>Log in</h1>
+<h1><font size="20" class= "fire-text">Shop or Drop</font></h1> 
 
 
 <style>
   body{
-   background-image: url("https://i.kym-cdn.com/entries/icons/original/000/005/574/takemymoney.jpg");
-   background-color: #cccccc;
+    background-image: url("https://media.giphy.com/media/nKERd2uhn8hhe/giphy.gif");
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    background-size: cover;
+    vertical-align: middle;
+    text-align:center;
+  }
  }
  </style>
 
 <body>
-  
+
   <% if flash.now[:danger] %>
     <%= flash.now[:danger] %>
   <% end %>
