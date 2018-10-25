@@ -3,16 +3,3 @@
 <% @buyers.each do |buyer| %>
   <%= link_to buyer.username, buyer %><br>
 <% end %>
-
-<h4>YOUR CART: </h4>
-  <%if flash[:message]%>
-  <%= flash[:message] %>
-  <% end %>
-  <ul>
-
-  <ol>
-  <% @cart_items.each do |item| %>
-    <li><%= item.name %></li>
-  <% end %>
-  </ol>
-  <hr>

@@ -1,9 +1,22 @@
-<h1>HELLO</h1>
+<style>
+img {
+   width:100%;
+   max-width:600px;
+}
+
+</style>
 
 <%= link_to 'My Page', buyer_path(session[:buyer_id]) %> <br><br>
 
-<p>Name:  <%=@product.name%> </p>
-<p>Description:  <%= @product.description %></p>
+<div class="w-col w-col-7 w-col-stack w-hidden-small w-hidden-tiny col-spc">
+     <div class="nivo-slice" style="left: 0px; width: 900px; height: 100%; opacity: 1;">
+          <%= image_tag @product.image_url %>
+     </div>
+
+</div>
+
+<p><%=@product.name%> </p>
+<p><%= @product.description %></p>
 <p>Price: $<%= Listing.float_to_money(@product.price) %> </p>
 
 <%= button_to  "This ain't it cheif", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'dislike' }}%>
