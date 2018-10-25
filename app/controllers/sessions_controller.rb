@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+
+  skip_before_action :authorized, only: [:new, :create,:splash]
+
   def new
     session[:user_type] = params[:user_type]
   end

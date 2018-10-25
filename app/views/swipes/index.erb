@@ -1,11 +1,26 @@
-<h1>HELLO</h1>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
 
 <%= link_to 'My Page', buyer_path(session[:buyer_id]) %> <br><br>
 
-<p>Name:  <%=@product.name%> </p>
-<p>Description:  <%= @product.description %></p>
-<p>Price: $<%= Listing.float_to_money(@product.price) %> </p>
+<% if session[:last_swipe] == nil %>
+    <div class="animated bounceInDown">
+  <% elsif session[:last_swipe] == "like" %>
+    <div class="animated bounceInLeft">
+  <%elsif session[:last_swipe] == "dislike" %>
+    <div class="animated bounceInRight">
+  <%elsif session[:last_swipe] == "superlike" %>
+    <div class="animated bounceInUp">
+  <%else %>
+    <div class="animated bounceInDown">
+  <%end%>
+  <p>Name:  <%=@product.name%> </p>
+  <p>Description:  <%= @product.description %></p>
+  <p>Price: $<%= Listing.float_to_money(@product.price) %> </p>
 
-<%= button_to  "This ain't it cheif", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'dislike' }}%>
-<%= button_to  "Litttttt", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'like' }}%>
-<%= button_to  "Take my money!!", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'superlike' }}%>
+  <%= button_to  "This ain't it cheif", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'dislike' }}%>
+  <%= button_to  "Litttttt", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'like' }}%>
+  <%= button_to  "Take my money!!", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'superlike' }}%>
+</div>
