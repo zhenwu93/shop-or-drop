@@ -1,15 +1,30 @@
 <style>
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: ##000000;
+  }
+
   body{
    background-image: url("https://media.giphy.com/media/nKERd2uhn8hhe/giphy.gif");
    background-repeat: no-repeat;
-   /* background-color: #cccccc; */
- }
+   background-color: #cccccc;
+   background-size: cover;
+   vertical-align: middle;
+   text-align:left;
+  }
+
  </style>
 
-<body>
-<h1>Welcome to Shop or Drop</h1> <br>
-<p> Do you want to log in buyer or seller?</p> <br>
 
-<%= button_to  "Buyer", "/login", {method: :patch, params: {user_type: "Buyer"}} %>
-<%= button_to  "Seller", "/login", {method: :patch, params: {user_type: "Seller"}} %>
+<body>
+<h1><font size="20" class= "fire-text"> Welcome To Shop or Drop</font></h1> <br>
+<p> <font size="6" class= "login">Do you want to log in buyer or seller?</font></p> <br>
+<!-- <div class="button">
+
+</div> -->
+<%= button_to  "Buyer", "/login", {method: :patch, params: {user_type: "Buyer"}}%>
+
+<p><%= button_to  "Seller", "/login", {method: :patch, params: {user_type: "Seller"}} %></p>
 </body>
