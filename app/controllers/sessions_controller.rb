@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    
+
     if (session[:user_type] == "Buyer")
       buyer = Buyer.find_by(email: params[:session][:email].downcase)
       if buyer && buyer.authenticate(params[:session][:password])
@@ -33,8 +33,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete :username
+    logout
   end
-
 
 end

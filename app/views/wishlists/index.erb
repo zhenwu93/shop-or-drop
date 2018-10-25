@@ -1,5 +1,5 @@
 <h1>My Wishlist </h1>
-
+  <%= link_to 'Back to my page', buyer_path(session[:buyer_id]) %> <br><br>
   <% @wish_hash_array.each do |wish_hash| %>
   <%= wish_hash[:item] %><br>
   <%= wish_hash[:description]%><br>

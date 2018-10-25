@@ -9,6 +9,24 @@
   <p> Username: <%= @buyer.username %> </p>
   <p>Email: <%= @buyer.email %></p>
 
+  <h4>YOUR CART: </h4>
+    <%if flash[:message]%>
+    <%= flash[:message] %>
+    <% end %>
+    <ul>
+
+    <ol>
+    <% @listings.each do |listing| %>
+      <li><%= listing.product_name %> : $<%= Listing.float_to_money(listing.product_price) %></li>
+    <% end %>
+    </ol>
+    <hr>
+
   <%= link_to 'Edit', edit_buyer_path %>
-  <%= link_to 'Delete', buyer_path(@buyer), method: :delete %>
+  <%= link_to 'Wish List', wishlists_path %>
   <%= link_to 'Swipes', swipes_path %>
+
+  <% if session[:buyer_id] == @buyer.id %>
+  <%= button_to "Delete Account", @buyer, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
+  <%= button_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure you want to log out?" } %>
+  <% end %>

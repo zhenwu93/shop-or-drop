@@ -22,16 +22,10 @@ class SwipesController < ApplicationController
     output = @swipe.debrief_swipe
 
     if output == "add_to_cart"
-      byebug
       params[:from] = "swipes"
-      redirect_to add_listing_to_cart(listing_id)
-    else
+      add_listing_to_cart(@swipe.listing_id)
+      end
       redirect_to '/swipes'
     end
-  end
-
-  private
-
-
 
 end

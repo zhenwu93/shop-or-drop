@@ -36,5 +36,4 @@ class WishlistsController < ApplicationController
       price: wish.listing.product_price}
     end
   end
-
 end

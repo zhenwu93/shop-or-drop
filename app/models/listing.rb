@@ -6,6 +6,22 @@ class Listing < ApplicationRecord
   has_many :wishlists
 
 
+
+  def self.float_to_money(amount)
+    temp = amount.to_s
+    temp_split = temp.split('.')
+
+    if temp_split.length == 2
+      if !(temp_split[1].length == 2)
+        temp_split[1] += '0'
+      end
+
+        temp = temp_split.join('.')
+    else
+        temp += '.00'
+    end
+  end
+
   def product_name
     product.name
   end

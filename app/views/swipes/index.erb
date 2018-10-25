@@ -1,9 +1,10 @@
 <h1>HELLO</h1>
 
+<%= link_to 'My Page', buyer_path(session[:buyer_id]) %> <br><br>
 
 <p>Name:  <%=@product.name%> </p>
 <p>Description:  <%= @product.description %></p>
-<p>Price:  <%= @product.price %> </p>
+<p>Price: $<%= Listing.float_to_money(@product.price) %> </p>
 
 <%= button_to  "This ain't it cheif", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'dislike' }}%>
 <%= button_to  "Litttttt", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'like' }}%>

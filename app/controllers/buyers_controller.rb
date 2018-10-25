@@ -6,6 +6,9 @@ class BuyersController < ApplicationController
   end
 
   def show
+    @listings = cart.map do |listing_id|
+      Listing.find(listing_id)
+    end
   end
 
   def new
@@ -38,7 +41,7 @@ class BuyersController < ApplicationController
 
   def destroy
     @buyer.destroy
-    redirect_to buyers_path
+    logout
   end
 
   private

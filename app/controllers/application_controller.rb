@@ -13,12 +13,24 @@ end
   end
 
   def show_cart#get all the items within the cart and render
-    @cart_items = Product.find(cart)
+    @cart_items = Listing.find(cart)
+  end
+
+  def logout
+    if session[:user_type] == "Buyer"
+        session.delete(:buyer_id)
+    elsif
+      session[:user_type] == "Seller"
+      session.delete(:seller_id)
+    end
+    session.delete(:user_type)
+    session.delete(:cart)
+    redirect_to login_path
   end
 
   def require_login
     if(params[:buyer_id] == "Buyer")
       return head(:forbidden) unless session.include? :user_id
-  end
+    end
 
 end
