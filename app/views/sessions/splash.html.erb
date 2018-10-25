@@ -1,5 +1,15 @@
+<style>
+  body{
+   background-image: url("https://media.giphy.com/media/nKERd2uhn8hhe/giphy.gif");
+   background-repeat: no-repeat;
+   /* background-color: #cccccc; */
+ }
+ </style>
+
+<body>
 <h1>Welcome to Shop or Drop</h1> <br>
 <p> Do you want to log in buyer or seller?</p> <br>
 
 <%= button_to  "Buyer", "/login", {method: :patch, params: {user_type: "Buyer"}} %>
 <%= button_to  "Seller", "/login", {method: :patch, params: {user_type: "Seller"}} %>
+</body>
