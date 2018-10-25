@@ -1,0 +1,5 @@
+<h1>Your Listings</h1>
+
+<% @listings.each do |listing| %>
+  <%= link_to listing.product_name, listing %><br>
+<% end %>

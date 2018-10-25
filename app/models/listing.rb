@@ -50,4 +50,12 @@ class Listing < ApplicationRecord
     product.price
   end
 
+  def quantity
+    product.quantity
+  end
+
+  def image_url
+    product.image_url
+  end
+
 end

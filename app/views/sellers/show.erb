@@ -1,4 +1,4 @@
-<h1>USER</h1>
+<h1>Seller</h1>
 
 <p> First Name: <%= @seller.first_name %></p>
   <p>Last Name: <%= @seller.last_name %> </p>
@@ -7,3 +7,7 @@
 
   <%= link_to 'Edit', edit_seller_path %>
   <%= link_to 'Delete', seller_path(@seller), method: :delete %>
+  <%= link_to 'New Listing', new_listing_path %>
+  <%= link_to 'New Product', new_product_path %>
+  <%= link_to 'Your Listings', listings_path %>
+  <%= link_to 'Your Products', products_path%>
