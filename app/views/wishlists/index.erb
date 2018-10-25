@@ -1,3 +1,11 @@
+<style>
+  body { margin: auto;
+    width: 50%;
+    border: 3px solid red;
+    padding: 10px;}
+</style>
+<body>
+
 <h1>My Wishlist </h1>
   <%= link_to 'Back to my page', buyer_path(session[:buyer_id]) %> <br><br>
   <% @wish_hash_array.each do |wish_hash| %>
@@ -7,3 +15,4 @@
   <%= button_to 'Add to Cart', add_listing_to_cart_path, { method: :patch, params: {wish_id: wish_hash[:wish_id], from: "wishlist"}} %>
   <%= button_to 'Delete Item', wishlist_path(wish_hash[:wish_id]), {method: :delete, params: {wish_id: wish_hash[:wish_id]}} %>
   <% end %>
+</body>
