@@ -210,7 +210,8 @@ DEPENDENCIES
   animate.css-rails (~> 3.2.0)
   bcrypt
   bootsnap (>= 1.1.0)
-  bootstrap
+
+  bootstrap (~> 4.1.1)
   byebug
   capybara (>= 2.15)
   chromedriver-helper
