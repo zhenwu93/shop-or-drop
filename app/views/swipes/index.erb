@@ -9,14 +9,29 @@
     width: 50%;
     border: 3px solid green;
     padding: 10px;
+    background-color: white;
   }
     img {
-   width:70%;
+   width: auto;
+   height: auto;
    max-width:600px;
  }
  h1 {
    text-align: center;
  }
+
+ body {
+  background-image: url("https://media.giphy.com/media/xT9DPxTnuhLPORFpvi/giphy.gif");
+ }
+
+ button {
+  padding: 1px 6px 1px 6px;
+}
+
+button img {
+  width: 180px;
+  height: 160px;
+}
 
 </style>
 
@@ -34,13 +49,20 @@
   <%else %>
     <div class="animated faster bounceInDown content">
   <%end%>
-  <p>Name:  <%=@product.name%> </p>
-  <p>Description:  <%= @product.description %></p>
-  <p>Price: $<%= Listing.float_to_money(@product.price) %> </p>
+  <p><span style="font-weight:bold;">Name: </span><%=@product.name%> </p>
+  <p><span style="font-weight:bold;">Description: </span><br><%= @product.description %></p>
+  <p><span style="font-weight:bold;">Price $</span><%= Listing.float_to_money(@product.price) %> </p>
   <%= image_tag @product.image_url %>
 
 
-<button><%= button_to  "This ain't it cheif", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'dislike' }}%></button>
-  <button><%= button_to  "Likeeeee", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'like' }}%></button>
-  <button><%= button_to  "Take my money!!", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'superlike' }}%></button>
+<button><%= button_to  "This ain't it cheif", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'dislike' }}%>
+      <img src="https://media.giphy.com/media/1zSz5MVw4zKg0/giphy.gif"/>
+</button>
+  <button><%= button_to  "Likeeeee", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'like' }}%>
+      <img src="https://media.giphy.com/media/1sSfhxzWHJ4vC/giphy.gif"/>
+  </button>
+  <button>
+    <span><%= button_to "Take my money!!", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'superlike' }}%>
+      <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/264/241/9e9.gif"/>
+    </button></span>
 </div>
