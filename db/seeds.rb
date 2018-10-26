@@ -49,6 +49,8 @@ Product.create(name: "Supreme Box Logo Hooded Sweatshirt Black", description:"Se
 
 Product.create(name: "Yeezy Boost 350 V2 Zebra", description:"Adidas is back with their latest Yeezy Boost 350 V2. Fresh off the heels of NBA All-Star Weekend, these Yeezy's are nicknamed the Zebras, and come in a classic white, black and red color scheme. Sporting a white-based Primeknit upper with black accents giving off a Zebra stripe vibe, “SPLY-350” displayed across the sides in red finished off by a translucent BOOST cushioned sole. To date they are the most limited adidas Yeezy release and have instantly become one of the most popular colorways." , price: 370, quantity: 1,  seller_id: 1, image_url: 'https://stockx-360.imgix.net/Adidas-Yeezy-Boost-350-V2-Zebra/Images/Adidas-Yeezy-Boost-350-V2-Zebra/Lv2/img01.jpg?auto=format,compress&w=1117&q=90')
 
+Product.create(name: "Sac de Jour Small Carryall Bag, Dark Beige", description:"APart of the Kering Group, the House kept true to its identity of absolute modernity and fashion authority. Under the creative direction of Anthony Vaccarello, appointed in April 2016, the House offers today a broad range of women's and men's ready-to-wear products, leather goods, shoes, jewelry and eyewear. Through a license agreement, it is also a major force in fragrances and cosmetics." , price: 2890, quantity: 1,  seller_id: 1, image_url: 'https://images.neimanmarcus.com/ca/3/product_assets/V/3/Q/K/0/NMV3QK0_mz.jpg')
+
 
 Product.all.each do |product|
   seller = Seller.all.sample

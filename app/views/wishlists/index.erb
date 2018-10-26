@@ -1,18 +1,35 @@
 <style>
   body { margin: auto;
     width: 50%;
-    border: 3px solid red;
-    padding: 10px;}
+    border: 3px solid black;
+    padding: 10px;
+    background-image: url("https://atgbcentral.com/data/out/20/4060116-plain-background-images.jpg");
+  }
+  h1{
+    text-align: center;
+    color: white;
+  }
+  p {
+    color: white;
+  }
+  div {
+    text-align: center;
+  }
+
+
 </style>
 <body>
 
-<h1>My Wishlist </h1>
-  <%= link_to 'Back to my page', buyer_path(session[:buyer_id]) %> <br><br>
-  <% @wish_hash_array.each do |wish_hash| %>
-  <%= wish_hash[:item] %><br>
-  <%= wish_hash[:description]%><br>
-  <%= wish_hash[:price]%><br><br>
-  <%= button_to 'Add to Cart', add_listing_to_cart_path, { method: :patch, params: {wish_id: wish_hash[:wish_id], from: "wishlist"}} %>
-  <%= button_to 'Delete Item', wishlist_path(wish_hash[:wish_id]), {method: :delete, params: {wish_id: wish_hash[:wish_id]}} %>
-  <% end %>
+<h1><u>My Wishlist</u></h1>
+
+  <p><button><%= link_to 'Back to my page', buyer_path(session[:buyer_id]) %> <br><br></button></p>
+      <div>
+    <% @wish_hash_array.each do |wish_hash| %>
+      <p><%= wish_hash[:item] %> $<%= wish_hash[:price]%></p>
+      <div class="btn-group">
+      <%= button_to 'Add to Cart', add_listing_to_cart_path, { method: :patch, params: {wish_id: wish_hash[:wish_id], from: "wishlist"}} %>
+      <%= button_to 'Delete Item', wishlist_path(wish_hash[:wish_id]), {method: :delete, params: {wish_id: wish_hash[:wish_id]}} %>
+    <% end %>
+  </div>
+</div>
 </body>

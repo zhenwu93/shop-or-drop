@@ -1,5 +1,3 @@
-
-
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
@@ -13,11 +11,11 @@
     img {
    width:70%;
    max-width:600px;
-
  }
+ 
 </style>
 
-<%= link_to 'My Page', buyer_path(session[:buyer_id]) %> <br><br>
+<button><%= link_to 'My Page', buyer_path(session[:buyer_id]) %></button><br><br>
 
 
 <% if session[:last_swipe] == nil %>
@@ -38,7 +36,7 @@
 
 
 
-  <%= button_to  "This ain't it cheif", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'dislike' }}%>
-  <%= button_to  "Litttttt", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'like' }}%>
-  <%= button_to  "Take my money!!", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'superlike' }}%>
+<button><%= button_to  "This ain't it cheif", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'dislike' }}%></button>
+  <button><%= button_to  "Litttttt", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'like' }}%></button>
+  <button><%= button_to  "Take my money!!", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'superlike' }}%></button>
 </div>
