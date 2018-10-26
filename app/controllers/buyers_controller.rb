@@ -45,6 +45,11 @@ class BuyersController < ApplicationController
     logout
   end
 
+  def stats
+    @buyer = Buyer.find(session[:buyer_id])
+     render 'stats'
+  end
+
   private
 
   def new_buyer_params
@@ -53,6 +58,7 @@ class BuyersController < ApplicationController
   end
 
   def find_buyer
+
     @buyer = Buyer.find(params[:id])
   end
 

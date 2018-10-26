@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   patch '/carts', to: 'carts#update', as: 'add_listing_to_cart'
   get '/carts', to: 'carts#index', as: 'carts'
   delete '/carts', to: 'carts#destroy', as: 'clear_cart'
+  get '/carts/stats', to: 'buyers#stats', as: 'buyer_stats'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -46,7 +46,7 @@
 
     <h4>Your Cart: </h4>
     <%if flash[:message]%>
-    <%= flash[:message] %> <br>
+      <%= flash[:message] %> <br>
     <% end %>
 
     <%if session[:from] == "clear_cart"%>
@@ -65,5 +65,6 @@
     <button><%= link_to 'Edit', edit_buyer_path %>  </button>
     <button><%= link_to 'Wish List', wishlists_path %>  </button>
     <button><%= link_to 'Swipes', swipes_path %>  </button>
+    <button><%= link_to 'View Stats', buyer_stats_path %>  </button>
 
 </body>

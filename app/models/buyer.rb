@@ -65,10 +65,19 @@ class Buyer < ApplicationRecord
 
   end
 
+  def total_positive_swipes
+    total_like_swipes + total_superlike_swipes
+  end
+
+  def total_percent_positive
+    ( total_positive_swipes.to_f / total_swipes) * 100
+  end
+
   def get_swipe_stats
     swipes = self.swipes
-
   end
+
+
 
 
 end
