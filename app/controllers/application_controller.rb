@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :require_login
   skip_before_action :require_login, only: [:index]
+  before_action :authorized
   include SessionsHelper
 end
 
@@ -28,9 +29,26 @@ end
     redirect_to login_path
   end
 
+  def current_user
+    if(session[:user_type] == "Buyer")
+      @user = Buyer.find_by({ id: session[:buyer_id] })
+    elsif(session[:user_type] == "Seller")
+      @user = Seller.find_by({ id: session[:seller_id] })
+    end
+
+ end
+
+  def logged_in?
+    !!current_user
+  end
+
   def require_login
     if(params[:buyer_id] == "Buyer")
       return head(:forbidden) unless session.include? :user_id
-    end
+  end
+
+  def authorized
+    redirect_to login_path unless logged_in?
+  end
 
 end

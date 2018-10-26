@@ -1,32 +1,70 @@
-<h1>BUYER</h1>
+<h1><font size="5" class= "fire-text">Shop Or Drop</font></h1>
 
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<style>
+  body{
+    background-image: url("https://media.giphy.com/media/nKERd2uhn8hhe/giphy.gif");
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    background-size: cover;
+    vertical-align: middle;
+    text-align:left;
+  }
+  h2{
+    text-align: right;
+    font-size: 100%;
+    }
+ </style>
+
+
+ <h2>
+ <div class="btn-group">
+ <% if session[:buyer_id] == @buyer.id %>
+ <button><%= button_to "Delete Account", @buyer, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %></button>
+ <button><%= button_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure you want to log out?" } %> </button>
+ <% end %>
+</h2>
+
+<body>
   <% if flash[:notice] %>
     <%= flash[:notice] %>
     <% end %>
 
-<p> First Name: <%= @buyer.first_name %></p>
-  <p>Last Name: <%= @buyer.last_name %> </p>
-  <p> Username: <%= @buyer.username %> </p>
-  <p>Email: <%= @buyer.email %></p>
+  <div>
+  <ul class="columns" data-columns="1">
+  <li><span style="font-weight:bold;">First Name: </span><%= @buyer.first_name %></li>
+  <li><span style="font-weight:bold;">Last Name: </span><%= @buyer.last_name %> </li>
+  <li> <span style="font-weight:bold;">Username: </span><%= @buyer.username %> </li>
+  <li><span style="font-weight:bold;">Email: </span><%= @buyer.email %></li>
+</ul>
+</div>
 
-  <h4>YOUR CART: </h4>
+    <h4>Your Cart: </h4>
     <%if flash[:message]%>
-    <%= flash[:message] %>
+      <%= flash[:message] %> <br>
     <% end %>
-    <ul>
 
-    <ol>
-    <% @listings.each do |listing| %>
-      <li><%= listing.product_name %> : $<%= Listing.float_to_money(listing.product_price) %></li>
-    <% end %>
-    </ol>
-    <hr>
+    <%if session[:from] == "clear_cart"%>
+      <%session[:cart] = [] %>
+      <%session[:from] = "blank"%>
+    <%else%>
+        <ul class="columns" data-columns="1">
+        <ol>
+        <% @listings.each do |listing| %>
+          <li> <%= listing.product_name %> : $<%= Listing.float_to_money(listing.product_price) %></li> <br>
+        <% end %>
+        </ol>
+      </ul>
+    <%end %>
+    <button><%= link_to 'View Cart', carts_path %>  </button>
+    <button><%= link_to 'Edit', edit_buyer_path %>  </button>
+    <button><%= link_to 'Wish List', wishlists_path %>  </button>
+    <button><%= link_to 'Swipes', swipes_path %>  </button>
+    <button><%= link_to 'View Stats', buyer_stats_path %>  </button>
 
-  <%= link_to 'Edit', edit_buyer_path %>
-  <%= link_to 'Wish List', wishlists_path %>
-  <%= link_to 'Swipes', swipes_path %>
-
-  <% if session[:buyer_id] == @buyer.id %>
-  <%= button_to "Delete Account", @buyer, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
-  <%= button_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure you want to log out?" } %>
-  <% end %>
+</body>

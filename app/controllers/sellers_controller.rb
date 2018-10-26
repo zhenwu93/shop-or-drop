@@ -1,5 +1,6 @@
 class SellersController < ApplicationController
   before_action :find_seller, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorized, only: [:new, :create]
 
   def index
     @sellers = Seller.all

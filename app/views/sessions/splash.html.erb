@@ -1,5 +1,36 @@
-<h1>Welcome to Shop or Drop</h1> <br>
-<p> Do you want to log in buyer or seller?</p> <br>
+<embed src="assets/audio/shop.mp3" autostart="true" loop="true" hidden="true"><embed>
+  
+<style>
 
-<%= button_to  "Buyer", "/login", {method: :patch, params: {user_type: "Buyer"}} %>
-<%= button_to  "Seller", "/login", {method: :patch, params: {user_type: "Seller"}} %>
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: ##000000;
+  }
+
+  body{
+   background-image: url("https://media.giphy.com/media/nKERd2uhn8hhe/giphy.gif");
+   background-repeat: no-repeat;
+   background-color: #cccccc;
+   background-size: cover;
+   vertical-align: middle;
+   text-align:left;
+  }
+
+ </style>
+
+ <head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ </head>
+
+<body>
+<h1><font size="20" class= "fire-text"> Welcome To Shop Or Drop</font></h1> <br>
+<p> <font size="6" class= "login">Do you want to log in buyer or seller?</font></p> <br>
+<!-- <div class="button">
+
+</div> -->
+<%= button_to  "Buyer", "/login", {method: :patch, params: {user_type: "Buyer"}}%>
+
+<p><%= button_to  "Seller", "/login", {method: :patch, params: {user_type: "Seller"}} %></p>
+</body>

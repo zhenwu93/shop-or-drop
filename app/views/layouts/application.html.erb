@@ -2,14 +2,31 @@
 <html>
   <head>
     <title>ShopOrDrop</title>
-    <%= csrf_meta_tags %>
+  <embed src="assets/audio/shop.mp3" autostart="true" loop="true" hidden="true"><embed>
+
+        <!-- <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     -->
+     <!-- <nav class="navbar navbar-light bg-light">
+       <a class="navbar-brand" href="/">Shop or Drop</a>
+       <form class="form-inline">
+         <a class="btn btn-outline-primary" href="/login" role="button">
+         Login
+         </a>
+         <div style="padding-left: 10px;">
+           <a class="btn btn-outline-success" href="/buyers/new" role="button">
+           Sign Up
+           </a>
+         </div>
+       </form>
+     </nav>
+  </head> -->
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <body>
     <%= yield %>
+
   </body>
 </html>

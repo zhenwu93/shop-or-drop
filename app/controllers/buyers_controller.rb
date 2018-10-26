@@ -1,5 +1,6 @@
 class BuyersController < ApplicationController
     before_action :find_buyer, only: [:show, :edit, :update, :destroy]
+    skip_before_action :authorized, only: [:new, :create]
 
   def index
     @buyers = Buyer.all
@@ -44,6 +45,11 @@ class BuyersController < ApplicationController
     logout
   end
 
+  def stats
+    @buyer = Buyer.find(session[:buyer_id])
+     render 'stats'
+  end
+
   private
 
   def new_buyer_params
@@ -52,6 +58,7 @@ class BuyersController < ApplicationController
   end
 
   def find_buyer
+
     @buyer = Buyer.find(params[:id])
   end
 

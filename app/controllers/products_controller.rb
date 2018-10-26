@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [:show, :edit, :update, :destroy]
 
   def index
-    @products = Product.all
+    @products = Seller.find(session[:seller_id]).products
   end
 
   def show
@@ -37,15 +37,18 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find(params[:id])
+    seller = @product.seller
     @product.destroy
-    redirect_to products_path
+    redirect_to seller_path(seller.id)
+
   end
 
   private
 
   def new_product_params
 
-    params.require(:product).permit(:name, :description, :price, :quantity, :seller_id)
+    params.require(:product).permit(:name, :description, :price, :quantity, :seller_id, :image_url)
   end
 
   def find_product
