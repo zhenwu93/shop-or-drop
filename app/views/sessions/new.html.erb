@@ -17,7 +17,6 @@
     vertical-align: middle;
     text-align:center;
   }
-
  </style>
 
 <body>
@@ -28,7 +27,6 @@
   <% if flash[:notice] %>
     <%= flash[:notice] %>
   <% end %>
-
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -43,7 +41,7 @@
         <%= f.submit "Log in", class: "btn btn-primary" %>
       <% end %>
 
-  <%if session[:user_type] == "Buyer"  %>
+      <%if session[:user_type] == "Buyer"  %>
         <p>New Buyer? <%= link_to "Sign up now!", new_buyer_path %></p>
       <% elsif session[:user_type] == "Seller"  %>
         <p>New Seller? <%= link_to "Sign up now!", new_seller_path %></p>

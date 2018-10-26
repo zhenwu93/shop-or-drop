@@ -51,7 +51,6 @@ Product.create(name: "Yeezy Boost 350 V2 Zebra", description:"Adidas is back wit
 
 Product.create(name: "Sac de Jour Small Carryall Bag, Dark Beige", description:"APart of the Kering Group, the House kept true to its identity of absolute modernity and fashion authority. Under the creative direction of Anthony Vaccarello, appointed in April 2016, the House offers today a broad range of women's and men's ready-to-wear products, leather goods, shoes, jewelry and eyewear. Through a license agreement, it is also a major force in fragrances and cosmetics." , price: 280, quantity: 1,  seller_id: 1, image_url: 'https://images.neimanmarcus.com/ca/3/product_assets/V/3/Q/K/0/NMV3QK0_mz.jpg')
 
-gi
 Product.create(name: "Captain Hat", description:"For boat owners or boat owner wannabees. The cap includes scrambled eggs on the brim and gold embroidered insignia on the cap. Put this cap on and become the 'Skipper' marooned on a desert island, and use it to your master the mates." , price: 28, quantity: 1,  seller_id: 1, image_url: 'https://www.villagehatshop.com/photos/product/giant/4511390S88394/alt/88394.jpg')
 
 Product.create(name: "Moose Hat", description:"Whether you're a fan of Rocky and Bullwinkle or just looking for a silly hat, this Moose Hat will do the trick. Complete with antlers and a velcro chin strap, this moose will not disappoint!" , price: 12, quantity: 1,  seller_id: 1, image_url: 'https://www.villagehatshop.com/photos/product/giant/4511390S77675/-/size-one-size-fits-most.jpg')

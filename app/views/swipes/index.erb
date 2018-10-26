@@ -55,7 +55,7 @@ button img {
   <%= image_tag @product.image_url %>
 
 
-<button><%= button_to  "This ain't it cheif", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'dislike' }}%>
+<button><%= button_to  "This ain't it Chief!", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'dislike' }}%>
       <img src="https://media.giphy.com/media/1zSz5MVw4zKg0/giphy.gif"/>
 </button>
   <button><%= button_to  "Likeeeee", "/swipes", {method: :post, params: {swipe_buyer_id: @swipe.buyer_id, swipe_listing_id: @swipe.listing_id, outcome: 'like' }}%>
