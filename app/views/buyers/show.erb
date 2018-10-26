@@ -46,18 +46,23 @@
 
     <h4>Your Cart: </h4>
     <%if flash[:message]%>
-    <%= flash[:message] %>
+    <%= flash[:message] %> <br>
     <% end %>
 
-    <ul class="columns" data-columns="1">
-    <ol>
-    <% @listings.each do |listing| %>
-      <li> <%= listing.product_name %> : $<%= Listing.float_to_money(listing.product_price) %></li> <br>
-    <% end %>
-    </ol>
-  </ul>
-
-  <button><%= link_to 'Edit', edit_buyer_path %>  </button>
+    <%if session[:from] == "clear_cart"%>
+      <%session[:cart] = [] %>
+      <%session[:from] = "blank"%>
+    <%else%>
+        <ul class="columns" data-columns="1">
+        <ol>
+        <% @listings.each do |listing| %>
+          <li> <%= listing.product_name %> : $<%= Listing.float_to_money(listing.product_price) %></li> <br>
+        <% end %>
+        </ol>
+      </ul>
+    <%end %>
+    <button><%= link_to 'View Cart', carts_path %>  </button>
+    <button><%= link_to 'Edit', edit_buyer_path %>  </button>
     <button><%= link_to 'Wish List', wishlists_path %>  </button>
     <button><%= link_to 'Swipes', swipes_path %>  </button>
 

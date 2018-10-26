@@ -29,4 +29,46 @@ class Buyer < ApplicationRecord
 
   end
 
+  def total_swipes
+    self.swipes.count
+  end
+
+  def total_like_swipes
+    array = self.swipes.select do |swipe|
+      if(swipe.outcome == "like")
+        swipe
+      end
+    end
+
+    array.count
+  end
+
+  def total_dislike_swipes
+    array = self.swipes.select do |swipe|
+      if(swipe.outcome == "dislike")
+        swipe
+      end
+    end
+
+
+    array.count
+  end
+
+  def total_superlike_swipes
+    array = self.swipes.select do |swipe|
+      if(swipe.outcome == "superlike")
+        swipe
+      end
+    end
+
+    array.count
+
+  end
+
+  def get_swipe_stats
+    swipes = self.swipes
+
+  end
+
+
 end

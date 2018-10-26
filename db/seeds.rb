@@ -51,7 +51,7 @@ Product.create(name: "Yeezy Boost 350 V2 Zebra", description:"Adidas is back wit
 
 Product.create(name: "Sac de Jour Small Carryall Bag, Dark Beige", description:"APart of the Kering Group, the House kept true to its identity of absolute modernity and fashion authority. Under the creative direction of Anthony Vaccarello, appointed in April 2016, the House offers today a broad range of women's and men's ready-to-wear products, leather goods, shoes, jewelry and eyewear. Through a license agreement, it is also a major force in fragrances and cosmetics." , price: 280, quantity: 1,  seller_id: 1, image_url: 'https://images.neimanmarcus.com/ca/3/product_assets/V/3/Q/K/0/NMV3QK0_mz.jpg')
 
-
+gi
 Product.create(name: "Captain Hat", description:"For boat owners or boat owner wannabees. The cap includes scrambled eggs on the brim and gold embroidered insignia on the cap. Put this cap on and become the 'Skipper' marooned on a desert island, and use it to your master the mates." , price: 28, quantity: 1,  seller_id: 1, image_url: 'https://www.villagehatshop.com/photos/product/giant/4511390S88394/alt/88394.jpg')
 
 Product.create(name: "Moose Hat", description:"Whether you're a fan of Rocky and Bullwinkle or just looking for a silly hat, this Moose Hat will do the trick. Complete with antlers and a velcro chin strap, this moose will not disappoint!" , price: 12, quantity: 1,  seller_id: 1, image_url: 'https://www.villagehatshop.com/photos/product/giant/4511390S77675/-/size-one-size-fits-most.jpg')
@@ -65,8 +65,6 @@ Product.create(name: "Dope Doggo", description:"Hello hooman I am doggo, looking
 Product.create(name: "Starkist Tuna", description:"Tuna in a can! Get your protein on." , price: 2.99, quantity: 1,  seller_id: 1, image_url: 'http://starkist.com/sites/default/files/products/3307_Can-in-water-%26-Oil-chunk-light-water_0.png')
 Product.create(name: "Ice Cream Truck", description:"Ice cream truck featured on the hit MTV show  Pimp My Ride, if your dream as a kid to own an ice cream truck this might be your lucky day!" , price: 350, quantity: 1,  seller_id: 1, image_url: 'http://4.bp.blogspot.com/_WwjddPMdTpg/SYmBDYBXBPI/AAAAAAAAgfY/Ny5tanogB6M/s400/05.jpg')
 Product.create(name: "Official Coupon to Treat Your Self", description:"You've been working hard all week, now its time to relax and spend some money! We claim no responsibility for actions that happen when using this coupon." , price: 200.25, quantity: 1,  seller_id: 1, image_url: 'https://media.giphy.com/media/gVv0K9mssfJao/giphy.gif')
-
-
 
 
 Product.all.each do |product|
