@@ -5,9 +5,16 @@
   <p> Username: <%= @seller.username %> </p>
   <p>Email: <%= @seller.email %></p>
 
-  <%= link_to 'Edit', edit_seller_path %>
-  <%= link_to 'Delete', seller_path(@seller), method: :delete %>
+  <%= link_to 'Edit Account', edit_seller_path %>
+
+
   <%= link_to 'New Listing', new_listing_path %>
   <%= link_to 'New Product', new_product_path %>
   <%= link_to 'Your Listings', listings_path %>
   <%= link_to 'Your Products', products_path%>
+
+
+    <% if session[:seller_id] == @seller.id %>
+      <button><%= button_to "Delete Account", @seller, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %></button>
+      <button><%= button_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure you want to log out?" } %> </button>
+    <% end %>
