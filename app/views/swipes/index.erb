@@ -9,6 +9,7 @@
     width: 50%;
     border: 3px solid green;
     padding: 10px;
+    background-color: white;
   }
     img {
    width:70%;
@@ -16,6 +17,10 @@
  }
  h1 {
    text-align: center;
+ }
+
+ body {
+  background-image: url("https://media.giphy.com/media/xT9DPxTnuhLPORFpvi/giphy.gif");
  }
 
 </style>
@@ -34,9 +39,9 @@
   <%else %>
     <div class="animated faster bounceInDown content">
   <%end%>
-  <p>Name:  <%=@product.name%> </p>
-  <p>Description:  <%= @product.description %></p>
-  <p>Price: $<%= Listing.float_to_money(@product.price) %> </p>
+  <p><span style="font-weight:bold;">Name: </span><%=@product.name%> </p>
+  <p><span style="font-weight:bold;">Description: </span><br><%= @product.description %></p>
+  <p><span style="font-weight:bold;">Price $</span><%= Listing.float_to_money(@product.price) %> </p>
   <%= image_tag @product.image_url %>
 
 
