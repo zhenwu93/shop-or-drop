@@ -13,3 +13,5 @@ Notable Gems:
 Bcrypt for password encryption 
 
 How to Use? Simply fork and clone the project. Bundle install all the gems and start the server with rails s.
+
+If you would like to collaberate on this project, please email me at zhenwu93@gmail.com
